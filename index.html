@@ -1,12 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio2</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vikas Tiwari — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>hey vikas this side</h1>
-    <h2>coming soon with a big suprise</h2>
+  <header class="hero">
+    <img class="avatar" src="images/profile.jpg" alt="Vikas Tiwari">
+    <h1>Hi, I’m <span class="highlight">Vikas Tiwari</span> 👋</h1>
+    <p class="tagline">Aspiring Software Engineer • Blockchain Enthusiast • Fresher</p>
+    <button class="github-btn" onclick="window.open('https://github.com/YOUR-USERNAME','_blank')">
+      🌟 View My GitHub
+    </button>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I am a B.Tech CSE first-year student passionate about technology, especially blockchain development.
+        My goal is to build impactful projects and grow into a skilled developer at top MNCs.
+      </p>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>💻 Portfolio Website</h3>
+        <p>This portfolio site — built with HTML & CSS and hosted on GitHub Pages.</p>
+      </div>
+      <div class="project-card">
+        <h3>🔗 Blockchain Demo</h3>
+        <p>A simple blockchain simulation in JavaScript (coming soon!).</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>💼 LinkedIn: <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Vikas Tiwari — Made with ❤️</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
