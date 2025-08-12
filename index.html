@@ -10,13 +10,27 @@
     /* Importing a modern and professional font */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+    /* Keyframes for the live background animation */
+    @keyframes moveGradient {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
     /* Basic styles for the entire page */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f4f8; /* A very light gray-blue background */
-      color: #333;
+      /* Live background styling with new aesthetic colors */
+      background: #141e30;
+      background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23141e30"/><path d="M0 0h50v50H0zM50 50h50v50H50z" fill-opacity="0.1" fill="%234A148C"/><path d="M0 50h50v50H0zM50 0h50v50H50z" fill-opacity="0.1" fill="%236C5CE7"/></svg>'), linear-gradient(135deg, #141e30, #243b55);
+      background-size: 200px 200px;
+      animation: moveGradient 20s linear infinite;
+      color: #e0e0e0; /* Changed font color for better readability on dark background */
       line-height: 1.6;
     }
 
@@ -24,7 +38,8 @@
     .hero {
       text-align: center;
       padding: 5rem 1rem;
-      background: linear-gradient(135deg, #a777f1, #513e9a); /* A deeper, more vibrant gradient */
+      background: rgba(10, 25, 41, 0.5); /* Semi-transparent background for contrast */
+      backdrop-filter: blur(10px);
       color: white;
     }
 
@@ -35,6 +50,7 @@
       border: 5px solid white;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease-in-out;
+      margin-bottom: 1rem;
     }
 
     .avatar:hover {
@@ -44,7 +60,7 @@
     .big-name {
       font-size: 3.5rem;
       font-weight: 700;
-      margin: 1rem 0 0.5rem;
+      margin: 0;
       color: white;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     }
@@ -76,11 +92,6 @@
       transform: translateY(-2px);
     }
 
-    .github-btn .icon {
-      font-size: 1.25em;
-      line-height: 1;
-    }
-
     /* Main content container */
     main {
       padding: 2rem;
@@ -92,17 +103,35 @@
     h2 {
       font-size: 2.2rem;
       font-weight: 600;
-      color: #4a148c;
-      border-bottom: 3px solid #6c5ce7;
+      color: #00bcd4; /* New accent color */
+      border-bottom: 3px solid #00bcd4;
       display: inline-block;
       padding-bottom: 0.25rem;
       margin-top: 3rem;
       margin-bottom: 1.5rem;
     }
 
+    /* Skills list styling */
+    .skills-list {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skills-list li {
+      background-color: #00bcd4; /* New accent color */
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
     /* Project cards */
     .project-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.1); /* Semi-transparent card background for contrast */
+      backdrop-filter: blur(5px);
       padding: 1.5rem;
       margin: 1rem 0;
       border-radius: 12px;
@@ -118,24 +147,31 @@
     .project-card h3 {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #4a148c;
+      color: #00bcd4; /* New accent color */
       margin-bottom: 0.5rem;
     }
 
     .project-card p {
-      color: #555;
+      color: #c0c0c0; /* Changed font color for better readability on dark background */
     }
 
     /* Contact section links */
     a {
-      color: #6c5ce7;
+      color: #00bcd4; /* New accent color */
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #4a148c;
+      color: #00acc1; /* Changed hover color for better readability */
       text-decoration: underline;
+    }
+    
+    /* New styling for the social media icons */
+    .social-icons a {
+        font-size: 2rem;
+        margin: 0 1rem;
+        color: #00bcd4; /* New accent color */
     }
 
     /* Footer styling */
@@ -143,8 +179,9 @@
       text-align: center;
       padding: 1.5rem;
       font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #e0e0e0;
+      color: #999;
+      border-top: 1px solid #444; /* Changed border color for contrast */
+      margin-top: 3rem;
     }
 
     /* Styling for the heart icon in the footer */
@@ -161,7 +198,8 @@
 <body>
   <!-- Hero Section -->
   <header class="hero">
-    <img class="avatar" src="portfolio2/profile.jpg" alt="Vikas Tiwari">
+    <!-- Corrected image path -->
+    <img class="avatar" src="images/profile.jpg" alt="Vikas Tiwari">
     <h1 class="big-name">Hello! I'm Vikas Tiwari</h1>
     <p class="tagline">Aspiring Software Engineer • Blockchain Enthusiast • Fresher</p>
     <button class="github-btn" onclick="window.open('https://github.com/Vikkycodees/portfolio2.git','_blank')">
@@ -194,11 +232,18 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
-      <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:rama198283@gmail.com">rama198283@gmail.com</a></p>
-      <p>📱 Mobile: <a href="tel:8052130446">8052130446</a></p>
-      <p>💼 LinkedIn: <a href="http://www.linkedin.com/in/vikas-tiwari-3195b6239" target="_blank">linkedin.com/in/your-linkedin</a></p>
+    <section class="contact" style="text-align: center;">
+      <h2>Get In Touch</h2>
+      <p style="color: #c0c0c0; max-width: 600px; margin: 0 auto 2rem;">
+        I'm always open to new opportunities and collaborations. Feel free to connect with me!
+      </p>
+      <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">
+        <a href="mailto:rama198283@gmail.com">rama198283@gmail.com</a>
+      </p>
+      <div class="social-icons">
+        <a href="http://www.linkedin.com/in/vikas-tiwari-3195b6239" target="_blank" title="LinkedIn">💼</a>
+        <a href="https://github.com/Vikkycodees/portfolio2.git" target="_blank" title="GitHub">🌟</a>
+      </div>
     </section>
   </main>
 
@@ -213,4 +258,3 @@
   </script>
 </body>
 </html>
-
